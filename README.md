@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 <br>
 
-## Run the 
+## Run the app
 Jalankan aplikasi dengan memanggil app.py menggunakan python
 ```
 python app.py
