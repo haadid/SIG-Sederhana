@@ -1,12 +1,14 @@
 import mysql.connector
 
+db_name = "gis_database"
+
 def koneksi_db():
     try:
         db = mysql.connector.connect(
             host="localhost",
             user="root",
             password="",  
-            database="gis_database"
+            database=db_name
         )
 
         cursor = db.cursor(dictionary=True)

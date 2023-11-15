@@ -62,11 +62,11 @@
             </div>
             <div class="mb-3">
                 <label for="lat" class="form-label">Latitude:</label>
-                <input type="text" class="form-control" id="lat" name="lat" required>
+                <input type="number" class="form-control" id="lat" name="lat" required step="any">
             </div>
             <div class="mb-3">
                 <label for="long" class="form-label">Longitude:</label>
-                <input type="text" class="form-control" id="long" name="long" required>
+                <input type="number" class="form-control" id="long" name="long" required step="any">
             </div>
             <button type="submit" class="btn btn-primary">Tambah Lokasi</button>
         </form>
@@ -82,7 +82,7 @@
 
 <script>
     // Inisialisasi peta
-    koordinat_awal = [-6.963105958958195, 110.46925188210184]
+    const kordinat_awal = [-6.963105958958195, 110.46925188210184]
     const map = L.map('map').setView(kordinat_awal, 14);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,

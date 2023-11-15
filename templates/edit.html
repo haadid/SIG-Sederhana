@@ -30,11 +30,11 @@
         </div>
         <div class="mb-3">
             <label for="lat" class="form-label">Latitude:</label>
-            <input type="text" class="form-control" id="lat" name="lat" value="{{ lokasi['latitude'] }}" required>
+            <input type="number" class="form-control" id="lat" name="lat" value="{{ lokasi['latitude'] }}" required step="any">
         </div>
         <div class="mb-3">
             <label for="long" class="form-label">Longitude:</label>
-            <input type="text" class="form-control" id="long" name="long" value="{{ lokasi['longitude'] }}" required>
+            <input type="number" class="form-control" id="long" name="long" value="{{ lokasi['longitude'] }}" required step="any">
         </div>
         <button type="submit" class="btn btn-primary">Update Lokasi</button>
     </form>
