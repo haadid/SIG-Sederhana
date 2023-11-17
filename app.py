@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 from routes import *
+from konfig_db import inisialisasi_db
 
 app = Flask(__name__)
+
+inisialisasi_db()
 
 @app.route('/')
 def index():
@@ -11,14 +14,19 @@ def index():
 @app.route('/tambah_lokasi', methods=['POST'])
 def tambah_lokasi_route():
     nama = request.form['lokasi']
-    latitude = float(request.form['lat'])
-    longitude = float(request.form['long'])
-    
+    latitude = request.form['lat']
+    longitude = request.form['long']
+
+    try:
+        latitude = float(latitude)
+        longitude = float(longitude)
+    except ValueError:
+        return "Invalid latitude or longitude format"
+
     success, message = tambah_lokasi(nama, latitude, longitude)
-
     print(message)
-
     return redirect(url_for('index'))
+
 
 @app.route('/edit_lokasi/<int:lokasi_id>')
 def edit_lokasi(lokasi_id):
@@ -28,8 +36,15 @@ def edit_lokasi(lokasi_id):
 @app.route('/update_lokasi/<int:lokasi_id>', methods=['POST'])
 def update_lokasi_route(lokasi_id):
     nama = request.form['lokasi']
-    latitude = float(request.form['lat'])
-    longitude = float(request.form['long'])
+    latitude = request.form['lat']
+    longitude = request.form['long']
+
+    try:
+        latitude = float(latitude)
+        longitude = float(longitude)
+    except ValueError:
+        print("Invalid latitude or longitude format")
+        return redirect(url_for('index'))
 
     success, message = update_lokasi(lokasi_id, nama, latitude, longitude)
 
