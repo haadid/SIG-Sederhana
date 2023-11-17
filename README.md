@@ -2,7 +2,7 @@
 Aplikasi sistem informasi geografis berbasis web. Aplikasi ini memungkinkan pengguna menambahkan penanda pada suatu lokasi dipeta.
 
 ## Database setting
-Gunakan aplikasi XAMPP lalu jalankan MySQL untuk membuat database dan menyimpan informasi penanda.
+Gunakan aplikasi XAMPP lalu jalankan MySQL untuk membuat database dan menyimpan informasi penanda. Nama skema atau database bisa diubah pada file konfig_db.py jika terdapat duplikasi.
 
 ## Setup environment
 Buka terminal sesuai path clone dan jalankan kode berikut:
