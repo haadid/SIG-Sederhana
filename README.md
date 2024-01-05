@@ -18,8 +18,3 @@ Jalankan aplikasi dengan memanggil app.py menggunakan python
 ```
 python app.py
 ```
-
-## Default localhost
-```
-http://127.0.0.1:5000/
-```
